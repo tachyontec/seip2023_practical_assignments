@@ -17,7 +17,10 @@ import java.util.ArrayList;
 
 
 /**
+ * @author: tachyontec
+ * This class will be used to create a histogram with grades from an input file
  * This will be used as the main class of the "gradeshistogram" module
+ * @since April 2023
  */
 public class HistogramGenerator {
 
@@ -59,11 +62,12 @@ public class HistogramGenerator {
             freq[i]++; //we have an extra grade i
         }
 
-
-        // Create a dataset to store the grades dat
-
-        //XYSeriesCollection dataset = new XYSeriesCollection();
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+	/*
+	 * Now the array with the frequencies is created
+	 *
+         * Create a dataset to store the grades frequencies data
+	 */
+	DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int i = 0; i < freq.length; i++) {
             dataset.addValue(freq[i], (Integer) 0, (Integer) i);
         }
@@ -73,9 +77,11 @@ public class HistogramGenerator {
         boolean tooltips = false; // do not visualize tooltips
         boolean urls = false; // do not visualize urls
 
-        // Create a histogram chart
-        // Declare and initialize a createXYLineChart JFreeChart
-        JFreeChart chart = ChartFactory.createBarChart("Chart title",
+	/*
+         * Create a histogram chart
+         * Declare and initialize a BarChart and save it as a JFreeChart
+	 */
+	JFreeChart chart = ChartFactory.createBarChart("Chart title",
                 "x_axis title",
                 "y_axis_title",
                 dataset,
