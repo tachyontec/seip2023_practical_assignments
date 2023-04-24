@@ -81,9 +81,9 @@ public class HistogramGenerator {
          * Create a histogram chart
          * Declare and initialize a BarChart and save it as a JFreeChart
 	 */
-	JFreeChart chart = ChartFactory.createBarChart("Chart title",
-                "x_axis title",
-                "y_axis_title",
+	JFreeChart chart = ChartFactory.createBarChart("Grades frequencies histogram",
+                "Grade",
+                "Frequency",
                 dataset,
                 PlotOrientation.VERTICAL, legend, tooltips, urls);
 
