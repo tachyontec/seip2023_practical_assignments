@@ -18,6 +18,9 @@
         
   
   <name>seip2023_practical_assignments</name>
+
+
+  <description>Container of all software technologies lab assignments as child modules</description>
         
   
   <url>http://maven.apache.org</url>

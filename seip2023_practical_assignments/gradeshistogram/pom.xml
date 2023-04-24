@@ -12,6 +12,7 @@
     <artifactId>gradeshistogram</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>gradeshistogram</name>
+    <description>Generate the histogram with project grades file, which is given as argument</description>
     <url>https://github.com/tachyontec/lab_software_tech</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
