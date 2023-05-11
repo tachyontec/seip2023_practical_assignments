@@ -54,11 +54,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
-                <configuration>
-                    <!-- Using java version 17 -->
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
             </plugin>
 
             <!-- This will be used to created the jar file based on our class -->
