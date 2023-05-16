@@ -22,3 +22,11 @@ Build & run:
     java -jar target/gradeshistogram-1.0-SNAPSHOT.jar <argument>
 
 Where argument can be the absolute or relative path of the input file
+
+
+<h1><li>testing</li></h1>
+
+
+
+For specific details and instructions, please refer to the [Individual README](./testing-readme.md) file.
+
