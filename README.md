@@ -1,3 +1,6 @@
+![Workflow Status](https://github.com/tachyontec/seip2023_practical_assignments/actions/workflows/maven.yml/badge.svg)
+
+
 # lab_software_tech
 Repository used for the lab of the "Applied Software Engineering" course
 
