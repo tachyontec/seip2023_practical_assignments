@@ -33,16 +33,14 @@ jobs:
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
-      
-      - name: Run tests with JaCoCo code coverage
-        run: mvn verify
+    - name: Run tests with JaCoCo code coverage
+      run: mvn verify
 
-      - name: Generate JaCoCo code coverage report
-  	run: mvn jacoco:report
+    - name: Generate JaCoCo code coverage report
+      run: mvn jacoco:report
 
-      - name: Upload JaCoCo report
-	  uses: actions/upload-artifact@v2
-	  with:
-	    name: JacocoReport
-	    path: target/site/jacoco
-
+    - name: Upload JaCoCo report
+      uses: actions/upload-artifact@v2
+      with:
+        name: JacocoReport
+        path: target/site/jacoco
