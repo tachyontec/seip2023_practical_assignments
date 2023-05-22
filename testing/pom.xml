@@ -7,14 +7,6 @@
     <version>1.0</version>
     <name>testing</name>
     <description>A project for practicing Unit Testing</description>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
     <parent>
         <groupId>gr.aueb.dmst.arisfetzian</groupId>
         <artifactId>seip2023_practical_assignments</artifactId>
