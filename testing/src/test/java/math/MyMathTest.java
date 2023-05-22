@@ -1,51 +1,56 @@
 package math;
 
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-/**
- * The MyMathTest class contains test cases for the MyMath class.
- *
- * @author arisfetzian
- * @version 1.0
- * @since 2023-05-16
- */
 public class MyMathTest {
-
-    @Rule
-    public ExpectedException exceptionRule = ExpectedException.none();
+    private MyMath myMath = new MyMath();
 
     @Test
-    public void testFactorialValidInput() {
-        // Test valid input and expected output
-        int result1 = MyMath.factorial(0);
-        Assert.assertEquals(1, result1);
-
-        int result2 = MyMath.factorial(5);
-        Assert.assertEquals(120, result2);
-
-        int result3 = MyMath.factorial(12);
-        Assert.assertEquals(479001600, result3);
+    public void testFactorial_Zero() {
+        int n = 0;
+        int expectedFactorial = 1;
+        int actualFactorial = myMath.factorial(n);
+        Assert.assertEquals(expectedFactorial, actualFactorial);
     }
 
     @Test
-    public void testFactorialNegativeInput() {
-        // Test negative input, expect IllegalArgumentException
-        exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Input should be between 0 and 12 (inclusive)");
+    public void testFactorial_PositiveNumber() {
+        int n = 5;
+        int expectedFactorial = 120;
+        int actualFactorial = myMath.factorial(n);
+        Assert.assertEquals(expectedFactorial, actualFactorial);
+    }
 
-        MyMath.factorial(-5);
+    @Test(expected = IllegalArgumentException.class)
+    public void testFactorial_NegativeNumber() {
+        int n = -3;
+        myMath.factorial(n);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFactorial_LargeNumber() {
+        int n = 15;
+        myMath.factorial(n);
     }
 
     @Test
-    public void testFactorialLargeInput() {
-        // Test input exceeding the allowed range, expect IllegalArgumentException
-        exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Input should be between 0 and 12 (inclusive)");
+    public void testIsPrime_PrimeNumber() {
+        int primeNumber = 13;
+        boolean result = myMath.isPrime(primeNumber);
+        Assert.assertTrue(result);
+    }
 
-        MyMath.factorial(15);
+    @Test
+    public void testIsPrime_NonPrimeNumber() {
+        int nonPrimeNumber = 15;
+        boolean result = myMath.isPrime(nonPrimeNumber);
+        Assert.assertFalse(result);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIsPrime_NumberLessThanTwo() {
+        int numberLessThanTwo = 1;
+        myMath.isPrime(numberLessThanTwo);
     }
 }
-

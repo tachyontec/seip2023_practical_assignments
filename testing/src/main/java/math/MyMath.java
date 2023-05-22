@@ -17,7 +17,7 @@ public class MyMath {
      * @return the factorial of the given number
      * @throws IllegalArgumentException if n is less than 0 or greater than 12
      */
-    public static int factorial(int n) {
+    public int factorial(int n) {
         if (n < 0 || n > 12) {
             throw new IllegalArgumentException("Input should be between 0 and 12 (inclusive)");
         }
@@ -32,4 +32,24 @@ public class MyMath {
         }
         return factorial;
     }
+
+    /**
+     * @param n the number which will be checked if prime or not
+     * @return boolean value true/false -> determines if it is prime
+     * @throws IllegalArgumentException if the number is less than 2
+     */
+    public boolean isPrime(int n) {
+        if (n < 2) {
+            throw new IllegalArgumentException("Number must be greater than or equal to 2");
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }

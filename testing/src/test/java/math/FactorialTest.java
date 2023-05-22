@@ -51,7 +51,8 @@ public class FactorialTest {
      */
     @Test
     public void testFactorial() {
-        int result = MyMath.factorial(input);
+        MyMath myMath = new MyMath();
+        int result = myMath.factorial(input);
         Assert.assertEquals(expected, result);
     }
 }
