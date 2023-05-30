@@ -5,9 +5,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.io.*;
+
 import java.net.URL;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class FileIOTest {
 
@@ -46,10 +48,20 @@ public class FileIOTest {
         exceptionRule.expectMessage("Input file does not exist");
     }
 
+
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidEntries(){
+    public void testInvalidEntries() {
         fileIO.readFile("invalid_entries.txt");
         exceptionRule.expectMessage("Given file does not contain valid integer numbers");
+    }
+
+    @Test
+    public void testReadFile_InvalidEntry() {
+        String filepath = getResourcePath("invalid_entries.txt");
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("Given file does not contain valid integer numbers");
+
+        fileIO.readFile(filepath);
     }
 
 

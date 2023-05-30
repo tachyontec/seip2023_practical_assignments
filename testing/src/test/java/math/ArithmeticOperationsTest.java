@@ -55,4 +55,16 @@ public class ArithmeticOperationsTest {
 
         operations.multiply(Integer.MAX_VALUE, 2);
     }
+
+    @Test
+    public void testMultiplyWithNegativeInput() {
+        ArithmeticOperations arithmeticOperations = new ArithmeticOperations();
+        int x = -5;
+        int y = 10;
+
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("x & y should be >= 0");
+
+        arithmeticOperations.multiply(x, y);
+    }
 }
